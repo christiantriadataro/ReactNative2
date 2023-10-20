@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, StyleSheet} from "react-native";
+import { PaperProvider } from 'react-native-paper';
+import Authen from "./src/pages/auth/Authen";
+import Login from "./src/pages/auth/Login";
+import Register from "./src/pages/auth/Register";
+import {useFonts} from "expo-font";
+import SplashScreen from "./src/pages/auth/SplashScreen";
+const App = () => {
+    // let [fontsLoaded] = useFonts({
+    //     Teko_Light: require("./assets/fonts/Teko-Light.ttf"),
+    //     Teko_Bold: require("./assets/fonts/Teko-Bold.ttf"),
+    //     Poppins_Black: require("./assets/fonts/Poppins-Black.ttf"),
+    //     Poppins_Bold: require("./assets/fonts/Poppins-Bold.ttf")
+    // });
+    return (
+        <PaperProvider>
+           <Register/>
+        </PaperProvider>
+    );
+};
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const style = StyleSheet.create({
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+})
+
+
+export default App;
+
+
+// const Stack = createStackNavigator();
+// const App = () => {
+//     return (
+//         <NavigationContainer>
+//             {/*<SplashScreen />*/}
+//             <Authen />
+//             {/*<Stack.Navigator>*/}
+//             {/*<Stack.Screen name="Authen" component={Authen} />*/}
+//             {/*<Stack.Screen name="ColorPalette" component={ColorPalette} />*/}
+//             {/*</Stack.Navigator>*/}
+//
+//         </NavigationContainer>
+//     );
+// };
